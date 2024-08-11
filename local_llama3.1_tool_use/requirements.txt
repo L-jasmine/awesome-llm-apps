@@ -1,3 +1,5 @@
 streamlit 
-ollama 
+openai
 phidata
+yfinance
+google-search-results
