@@ -17,7 +17,7 @@ if "SERPAPI_API_KEY" not in os.environ:
 def get_assistant(tools):
     return Assistant(
         name="llama3_assistant",
-        llm=OpenAILike(model="llama",base_url="https://llama.gaianet.network/v1"),
+        llm=OpenAILike(model="llama",base_url="https://llama.us.gaianet.network/v1"),
         tools=tools,
         description="You are a helpful assistant that can access specific tools based on user selection.",
         show_tool_calls=True,
