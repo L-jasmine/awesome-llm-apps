@@ -8,6 +8,9 @@ from phi.tools.serpapi_tools import SerpApiTools
 
 st.set_page_config(page_title="Llama-3 Tool Use", page_icon="🦙")
 
+base_url=os.environ["BASE_URL"]
+model=os.environ["MODEL"]
+
 # Ensure SERPAPI_API_KEY is set
 if "SERPAPI_API_KEY" not in os.environ:
     st.error("Please set the SERPAPI_API_KEY environment variable.")
@@ -17,7 +20,7 @@ if "SERPAPI_API_KEY" not in os.environ:
 def get_assistant(tools):
     return Assistant(
         name="llama3_assistant",
-        llm=OpenAILike(model="llama",base_url="https://llama.us.gaianet.network/v1"),
+        llm=OpenAILike(model=model,base_url=base_url),
         tools=tools,
         description="You are a helpful assistant that can access specific tools based on user selection.",
         show_tool_calls=True,
